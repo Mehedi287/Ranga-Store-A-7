@@ -1,3 +1,4 @@
+// ---------------load product from api ---------------
 const loadProducts = () => {
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
@@ -6,10 +7,11 @@ const loadProducts = () => {
 };
 loadProducts();
 
-// show all product in UI 
+// -------------show all product in UI ---------------
 const showProducts = (products) => {
-  const allProducts = products.map((pd) => pd);
+  const allProducts = products.map((singleProduct) => singleProduct);
   for (const product of allProducts) {
+    console.log(product);
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
@@ -27,10 +29,11 @@ const showProducts = (products) => {
   }
 };
 let count = 0;
+//-------------------- add to cart ----------------
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
-
+  totalPrice();
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
@@ -79,3 +82,13 @@ const updateTotal = () => {
   document.getElementById("total").innerText = grandTotal;
 };
 // set total price ----------------
+const totalPrice = () => {
+  const price = document.getElementById('price').innerText;
+  const delevaryCharge = document.getElementById('delivery-charge').innerText
+  const totalTaxt = document.getElementById('total-tax').innerText;
+  console.log(price, delevaryCharge, totalTaxt);
+  const total = document.getElementById('total');
+  total.innerText = parseFloat(price) + parseFloat(delevaryCharge) + parseFloat(totalTaxt);
+
+
+}
