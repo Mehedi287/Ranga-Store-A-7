@@ -87,4 +87,4 @@ const updateTotal = () => {
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 // set total price ----------------
-// hi mamsa sdkfjaksd cj
+
