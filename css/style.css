@@ -43,7 +43,7 @@ body {
 }
 .single-product {
   padding: 10px;
-  transition: 0.6s;
+  transition: 0.3s;
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   
@@ -51,7 +51,7 @@ body {
   margin: 10px;
 }
 .single-product:hover {
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 3px 3px 15px gray;
   border-radius: 10px;
   border: 1px solid cyan;
 
