@@ -46,15 +46,12 @@ body {
   transition: 0.3s;
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
-  
+  background-color: rgb(247, 242, 242);
   transition: 0.8s;
   margin: 10px;
 }
 .single-product:hover {
   box-shadow: 3px 3px 15px gray;
-  border-radius: 10px;
-  border: 1px solid cyan;
-
 }
 .product-image {
   width: 150px;

@@ -37,14 +37,14 @@ let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
-  totalPrice();
   updateTaxAndCharge();
+  updateTotal();
   document.getElementById("total-Products").innerText = count;
 };
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  const converted = parseFloat(element);
   return converted;
 };
 
@@ -53,13 +53,13 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = parseFloat(total).toFixed(2);
+  document.getElementById(id).innerText = total.toFixed(2);
   //  parseFloat("10.547892").toFixed(2)
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = parseFloat(value).toFixed(2);
+  document.getElementById(id).innerText = value.toFixed(2);
 };
 
 // update delivery charge and total Tax
@@ -80,20 +80,10 @@ const updateTaxAndCharge = () => {
 };
 
 // //grandTotal update function
-// const updateTotal = () => {
-//   const grandTotal =
-//     getInputValue("price") + getInputValue("delivery-charge") +
-//     getInputValue("total-tax");
-//   document.getElementById("total").innerText = grandTotal;
-// };
+const updateTotal = () => {
+  const grandTotal =
+    getInputValue("price") + getInputValue("delivery-charge") +
+    getInputValue("total-tax");
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
+};
 // set total price ----------------
-const totalPrice = () => {
-  const price = document.getElementById('price').innerText;
-  const delevaryCharge = document.getElementById('delivery-charge').innerText
-  const totalTaxt = document.getElementById('total-tax').innerText;
-  console.log(price, delevaryCharge, totalTaxt);
-  const total = document.getElementById('total');
-  total.innerText = parseFloat(price) + parseFloat(delevaryCharge) + parseFloat(totalTaxt);
-
-
-}
