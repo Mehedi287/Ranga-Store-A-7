@@ -86,5 +86,5 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-// set total price ----------------
+// set total price --- ----------------
 
